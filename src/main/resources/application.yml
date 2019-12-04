@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      routes:
+       - id: define-predicate
+         uri: "http://www.jd.com"
+         filters:
+          - Jiangzh=imooc,jiangzh
+         predicates:
+          - Path=/jiangzh/**
+          - JiangzhAfter=2019-11-28
+#      - predicates:
+#        - Path=/jiangzh/**
+#        uri: "http://www.jd.com"
+
